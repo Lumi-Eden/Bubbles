@@ -1,0 +1,18 @@
+:root {
+    /* == Main colors == */
+    --bg-color: #daecf7;
+    --chat-outline-color: #66a8ce;
+    --chat-color: #0e1722;
+
+    /* --bg-color: #ebf1fd;
+    --chat-outline-color: #a0a0ff;
+    --chat-color: #0e0e22; */
+
+    /* == Mini user profile colors */
+    --mini-usr-profile-div-color: #d3d3d3; 
+    --mini-usr-profile-div-border-color: #5a5a5a;
+    --mini-usr-profile-bio-color: #5a5a5a;
+
+    /* == Banner color == */
+    --usr-banner-color: #303030;
+}
