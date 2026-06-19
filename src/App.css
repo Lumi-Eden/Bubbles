@@ -9,13 +9,16 @@
 #app-logo-title {
   #app-logo-mini {
     position: absolute;
-    top: 5px; left: 15px;
+    top: 5px; left: 16px;
     width: 40px; height: 40px;
+    filter: var(--app-logo-mini-filter);
   }
 
   #app-title {
     position: absolute;
-    top: -18px; left: 70px;
+    top: -14px; left: 72px;
+    color: var(--app-title-color);
+    font-size: 22px;
   }
 }
 
@@ -23,9 +26,10 @@
 #chat-div-outline {
   display: flex;
   background-color: var(--chat-outline-color);
+  background: var(--chat-outline-color-gradient);
   position: fixed;
   right: 0; bottom: 0;
-  width: 94%; height: 92vh;
+  width: 93%; height: 95vh;
   box-sizing: border-box;
   border-radius: 22px 0 0 22px;
 
@@ -41,7 +45,7 @@
     background-color: var(--chat-color);
     position: fixed;
     right: 4px; bottom: 8px;
-    width: 90%; height: 84%;
+    width: 90%; height: 87%;
     border-radius: 22px;
   }
 }
@@ -75,7 +79,7 @@
 #curr-usr-icon-div {
   display: flex;
   position: fixed;
-  left: 2.8%; bottom: 6vh;
+  left: 3%; bottom: 6vh;
   transform: translateX(-50%);
   max-width: 4.5%; max-height: 4.8%;
   border-radius: 100%;
