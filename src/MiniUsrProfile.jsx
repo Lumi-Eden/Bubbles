@@ -1,9 +1,13 @@
-export default function MiniUsrProfile({pfpSrc, bannerSrc, username}) {
+export default function MiniUsrProfile({pfpSrc, bannerSrc, username, logoutBtn}) {
     return (
         <div id="mini-usr-profile-div">
 
             {/* Banner */}
             <div id="mini-usr-profile-banner-div" style={{ backgroundImage: `url(${bannerSrc})` }} />
+
+            <div id="logout" onClick={logoutBtn}>
+                <img src="./src/assets/logout.png" id="logout-icon" />
+            </div>
 
             <div id="expand-settings">
               <img src="./src/assets/Cogwheel.svg" id="cogwheel"/>

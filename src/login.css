@@ -6,6 +6,7 @@
     background: #0d11ff;
     background: linear-gradient(152deg,rgba(13, 17, 255, 1) 0%, rgba(17, 0, 112, 1) 29%, rgba(60, 3, 145, 1) 58%, rgba(113, 4, 186, 1) 100%);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* overflow: hidden; */
 }
 
 #login-prompt {
@@ -44,7 +45,7 @@
             line-height: 14px;
         }
 
-        #username-input, #password-input {
+        #email-input, #password-input, #username-input {
             width: 180px; height: 20px;
             margin: auto;
             transform: translateY(-12px);
@@ -72,6 +73,19 @@
                 background-color: #dadada;
                 transform:scale(0.95);
             }
+        }
+    }
+
+    #signup-btn {
+        display: flex;
+        margin: -80% auto;
+
+        #signup-text {
+            margin: 4px auto 0;
+            font-size: small;
+            color: #bbbbbb;
+            cursor: pointer;
+            text-decoration: underline;
         }
     }
 }

@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { supabase } from "./utils/supabase/supabaseClient.js";
+// IMGS
 import placeholderPfp from "./assets/ach-placeholder-pfp.png";
 import placeholderBanner from "./assets/cat-banner-placeholder.png";
-import cogwheel from "./assets/Cogwheel.svg"
+import cogwheel from "./assets/Cogwheel.svg";
+// DATA
 import { invoke } from "@tauri-apps/api/core";
 import Login from "./Login";
 import MiniUsrProfile from "./MiniUsrProfile";
+import { restoreUsrSession } from "./utils/authStorage.js";
+// STYLES
 import "./App.css";
 import "./reset.css";
 
@@ -12,28 +17,36 @@ import "./reset.css";
 function App() {
 
   //Login handle hooks
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null);
 
   // Mini profile hooks
   const [isMiniProfileOpen, setIsMiniProfileOpen] = useState(false);
   
   const toggleMiniProfile = () => {
-    setIsMiniProfileOpen(!isMiniProfileOpen)
+    setIsMiniProfileOpen(!isMiniProfileOpen);
   }
 
   // Login and Logout
   const handleLogin = (userData) => {
-    setCurrentUser(userData)
+    setCurrentUser(userData);
   }
 
-  const handleLogout = () => {
-    setCurrentUser(null)
-    setIsMiniProfileOpen(false)
+  const handleLogout = async () => {
+    setCurrentUser(null);
+    setIsMiniProfileOpen(false);
+
+    // OAuth
+    const { data, error } = await supabase.auth.signOut({ scope: 'local' });
   }
+
+  // Check to restore session, only then handle login screen
+  // ------- 
+  useEffect(() => {restoreUsrSession(setCurrentUser)}, []) // <- empty array = run on first boot
 
   if (!currentUser) {
     return <Login onLoginSuccess={handleLogin} />
   }
+  // -------
 
   // App UI
   return (
@@ -48,9 +61,9 @@ function App() {
         <CurrUsrIcon onClick={toggleMiniProfile} pfpSrc={placeholderPfp} />
       </div>
 
-      {/* Mini user profile and its children */}
+      {/* Mini user profile and its children - change username later */}
       {isMiniProfileOpen && (
-        <MiniUsrProfile pfpSrc={placeholderPfp} bannerSrc={placeholderBanner} username={currentUser.username} />
+        <MiniUsrProfile pfpSrc={placeholderPfp} bannerSrc={placeholderBanner} username={currentUser.email} logoutBtn={handleLogout} />
       )}
 
       <div id="chat-div-outline">
