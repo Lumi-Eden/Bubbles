@@ -11,7 +11,8 @@ export function restoreUsrSession(setCurrentUser) {
                 .single();
 
             if (!profileError) {
-                setCurrentUser({ ...data.session.user, ...profile });
+                const { id: _profileId, ...profileRest } = profile;
+                setCurrentUser({ ...data.session.user, ...profileRest });
             }
         }
     });

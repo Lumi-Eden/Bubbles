@@ -1,0 +1,57 @@
+@import "variables.css";
+
+#message-chain {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 5.5% 1.5%;
+    color: white;
+    width: 96%;
+}
+
+.message {
+    display: inline-flex;
+
+    .message-icon {
+        width: 40px; height: 40px;
+        border-radius: 100%;
+    }
+
+    .message-content {
+        background-color: #06060f8c;
+        margin-left: 4px;
+        width: 100%;
+        margin-bottom: 20px;
+        padding-top: 5px; padding-left: 5px;
+        border-radius: 18px;
+
+        & p {
+            height: 18px;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    }
+}
+
+#message-input {
+    position: fixed;
+    background-color: #06060f;
+    color: white;
+    bottom: 3%; left: 11%;
+    width: 82%; height: 4%;
+    padding: 1% 1% 0% 1%;
+    border-radius: 18px;
+
+    font-size: large;
+    resize: none;
+    overflow: hidden;
+    max-height: 120px;
+}
+
+/* DIVIDER */
+#divider {
+    position: absolute;
+    bottom: 13%; left: 1%;
+    background-color: var(--divider-color);
+    width: 4.5%; height: 2px;
+    border-radius: 24px;
+}

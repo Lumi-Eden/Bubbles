@@ -16,7 +16,8 @@
 
   #app-title {
     position: absolute;
-    top: -12px; left: 72px;
+    /* top: -12px; */ left: 72px;
+    transform: translateY(-40%);
     color: var(--app-title-color);
     font-size: 22px;
   }
@@ -47,6 +48,37 @@
     right: 4px; bottom: 8px;
     width: 90%; height: 87%;
     border-radius: 22px;
+    overflow-y: auto;
+    overflow-anchor: none;
+    
+
+    #scrollbar-customization-div {
+      width: 99%; height: 98%;
+      overflow-x: hidden;
+      margin-top: 1%;
+
+      scrollbar-width: thin;
+      scrollbar-color: #ffffff40 transparent; /* Firefox: thumb, track */
+    }
+
+
+    /* SCROLL BAR */
+    #chat-div::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #chat-div::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    #chat-div::-webkit-scrollbar-thumb {
+      background-color: #ffffff40;
+      border-radius: 10px;
+    }
+
+    #chat-div::-webkit-scrollbar-thumb:hover {
+      background-color: #ffffff70;
+    }
   }
 }
 

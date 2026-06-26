@@ -1,8 +1,15 @@
 :root {
 
+    /* == Divider == */
+    --divider-color: #acacac;
+
     /* == Title == */
     --app-logo-mini-filter: invert();
     --app-title-color: #cccccc;
+
+    /* == User search == */
+    --user-search-styling-container-color: #0e0e22;
+    --user-search-styling-container-border-color: #5a5a5a;
 
     /* == Main colors == */
     /* --bg-color: #daecf7;

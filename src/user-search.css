@@ -1,0 +1,41 @@
+@import "./variables.css";
+
+#search-grouping-div {
+    display: flex;
+}
+
+#user-search-div {
+    display: flex;
+    width: 6%; height: 1%;
+
+    & img {
+        width: 100%; height: 100%;
+        filter: invert();
+        margin: 120% 6%;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(0.95);
+        }
+    }
+
+}
+
+#user-search-styling-container {
+    z-index: 20;
+    width: 20%; height: 20%;
+    margin: auto 1%;
+    background-color: var(--user-search-styling-container-color);
+    padding: 1px 8px;
+    border: 1px solid var(--user-search-styling-container-border-color);
+    border-radius: 18px;
+    color: var(--app-title-color);
+
+    #user-search-field {
+        background-color: var(--user-search-styling-container-color);
+        outline: 0; border: 0;
+        border-radius: 18px;
+        color: var(--app-title-color);
+    }
+}

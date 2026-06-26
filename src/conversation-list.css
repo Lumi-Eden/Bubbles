@@ -1,0 +1,26 @@
+@import "./variables.css";
+
+#conversation-list {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: -5% 0 auto 0.8%;
+    height: auto; width: 5%;
+    gap: 8px;
+}
+
+.conversation-icon-bubble {
+    width: 100%; height: 100%;
+
+    & img {
+        width: 100%; height: auto;
+        border-radius: 100%;
+        border: 2px solid #969696c7;
+        transition: transform .2s ease-in-out;
+
+        &:hover {
+            transform: scale(0.95);
+            cursor: pointer;
+        }
+    }
+
+}

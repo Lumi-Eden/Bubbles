@@ -35,7 +35,8 @@ export default function Login({onLoginSuccess}) {
                 return
             }
 
-            onLoginSuccess({ ...data.user, ...profile });
+            const { id: _profileId, ...profileRest } = profile;
+            onLoginSuccess({ ...data.user, ...profileRest });
         }
 
         else {
